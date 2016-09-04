@@ -1,21 +1,24 @@
-var path = require('path');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
-    entry: "./es6/main.js",
-    output: {
-        path: __dirname,
-        filename: "bundle.js"
+    entry: {
+        a: './app/a.js',
+        b: './app/b.js'
     },
     module: {
         loaders: [{
-            test: path.join(__dirname, 'es6'),
-            loader: 'babel-loader',
-            query: {
-                presets: ['es2015']
-            }
+            test: /\.css$/,
+            loader: ExtractTextPlugin.extract("style-loader", "css-loader")
         }, {
-            test: /.scss$/,
-            loader: ExtractTextPlugin.extract('style', 'css!sass')
+            test: /\.scss$/,
+            loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
         }]
-    }
-};
+    },
+    output: {
+        path: 'build',
+        filename: '[name]-bundle.js',
+        chunkFilename: "[id].js"
+    },
+    plugins: [
+        new ExtractTextPlugin("css/[name].css")
+    ]
+}
