@@ -1,7 +1,7 @@
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
-    entry: "./es6/main.js",
+    entry: "./app/main.js",
     output: {
         path: __dirname,
         filename: "bundle.js"
@@ -16,6 +16,9 @@ module.exports = {
         }, {
             test: /.scss$/,
             loader: ExtractTextPlugin.extract('style', 'css!sass')
+        }, {
+            test: /\.vue$/,
+            loader: 'vue'
         }]
     }
 };
