@@ -44,6 +44,8 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
 	var Vue = __webpack_require__(1);
 	var App = __webpack_require__(3);
 	new Vue({
@@ -51,8 +53,7 @@
 	    components: {
 	        myApp: App
 	    }
-	})
-
+	});
 
 /***/ },
 /* 1 */
@@ -10331,7 +10332,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] app\\js\\components\\app.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(19)
+	__vue_template__ = __webpack_require__(24)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10673,6 +10674,14 @@
 
 	'use strict';
 
+	// <template>
+	//   <div class="app">
+	//   	<component-head></component-head>
+	//   	<component-footer></component-footer>
+	//   </div>
+	// </template>
+	//
+	// <script>
 	var ComponentHead = __webpack_require__(9);
 	var ComponentFooter = __webpack_require__(14);
 	module.exports = {
@@ -10686,6 +10695,19 @@
 	    ComponentFooter: ComponentFooter
 	  }
 	};
+	// </script>
+	//
+	// <style>
+	// html,body{
+	// 	height: 100%;
+	// 	margin: 0;
+	// }
+	// .app {
+	//   background-color: #eee;
+	//   position: relative;
+	//   height: 100%;
+	// }
+	// </style>
 
 /***/ },
 /* 9 */
@@ -10762,6 +10784,11 @@
 
 	'use strict';
 
+	// <template>
+	//   <div class="head">{{ msg }}</div>
+	// </template>
+	//
+	// <script>
 	module.exports = {
 	  data: function data() {
 	    return {
@@ -10770,6 +10797,22 @@
 	  }
 
 	};
+	// </script>
+	//
+	// <style>
+	// .head {
+	//   color: red;
+	//   height: 30px;
+	//   background-color: #333;
+	//   color: #fff;
+	//   line-height: 30px;
+	//   font-size: 14px;
+	//   position: absolute;
+	//   left: 0;
+	//   top: 0;
+	//   width: 100%;
+	// }
+	// </style>
 
 /***/ },
 /* 13 */
@@ -10788,7 +10831,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] app\\js\\components\\footer.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(18)
+	__vue_template__ = __webpack_require__(23)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10841,7 +10884,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n.footer {\r\n  color: red;\r\n  height: 30px;\r\n  background-color: #333;\r\n  color: #fff;\r\n  line-height: 30px;\r\n  font-size: 14px;\r\n  bottom: 0;\r\n  left: 0;\r\n  position: absolute;\r\n  width: 100%;\r\n}\r\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n.footer {\r\n  color: red;\r\n  height: 30px;\r\n  background-color: #333;\r\n  color: #fff;\r\n  line-height: 30px;\r\n  font-size: 14px;\r\n  bottom: 0;\r\n  left: 0;\r\n  position: absolute;\r\n  width: 100%;\r\n}\r\n", ""]);
 
 	// exports
 
@@ -10852,7 +10895,11 @@
 
 	'use strict';
 
-	var componentFootericon = __webpack_require__(20);
+	var _footIcon = __webpack_require__(18);
+
+	var _footIcon2 = _interopRequireDefault(_footIcon);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	module.exports = {
 	  data: function data() {
@@ -10861,34 +10908,48 @@
 	    };
 	  },
 	  components: {
-	    componentFootericon: componentFootericon
+	    componentFootericon: _footIcon2.default
 	  }
 	};
+	// </script>
+	//
+	// <style>
+	// .footer {
+	//   color: red;
+	//   height: 30px;
+	//   background-color: #333;
+	//   color: #fff;
+	//   line-height: 30px;
+	//   font-size: 14px;
+	//   bottom: 0;
+	//   left: 0;
+	//   position: absolute;
+	//   width: 100%;
+	// }
+	// </style>
+	// <template>
+	//   <div class="footer">
+	//   	<component-footericon>{{msg}}</component-footericon>
+	//   	<component-footericon>{{msg}}</component-footericon>
+	//   	<component-footericon>{{msg}}</component-footericon>
+	//   	<component-footericon>{{msg}}</component-footericon>
+	//   </div>
+	// </template>
+	//
+	// <script>
 
 /***/ },
 /* 18 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<div class=\"footer\">\n\t<component-footericon>{{msg}}</component-footericon>\n\t<component-footericon>{{msg}}</component-footericon>\n\t<component-footericon>{{msg}}</component-footericon>\n\t<component-footericon>{{msg}}</component-footericon>\n</div>\n";
-
-/***/ },
-/* 19 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<div class=\"app\">\n\t<component-head></component-head>\n\t<component-footer></component-footer>\n</div>\n";
-
-/***/ },
-/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(21)
-	__vue_script__ = __webpack_require__(23)
+	__webpack_require__(19)
+	__vue_script__ = __webpack_require__(21)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] app\\js\\components\\footIcon.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(24)
+	__vue_template__ = __webpack_require__(22)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -10907,13 +10968,13 @@
 	})()}
 
 /***/ },
-/* 21 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(22);
+	var content = __webpack_require__(20);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(7)(content, {});
@@ -10933,7 +10994,7 @@
 	}
 
 /***/ },
-/* 22 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(6)();
@@ -10947,11 +11008,16 @@
 
 
 /***/ },
-/* 23 */
+/* 21 */
 /***/ function(module, exports) {
 
 	'use strict';
 
+	// <template>
+	//   <div class="footer-icon">{{ msg }}</div>
+	// </template>
+	//
+	// <script>
 	module.exports = {
 	  data: function data() {
 	    return {
@@ -10959,12 +11025,36 @@
 	    };
 	  }
 	};
+	// </script>
+	//
+	// <style>
+	// .footer-icon {
+	//   width: 25%;
+	//   box-sizing: border-box;
+	//   padding: 5px;
+	//   color: #eee;
+	//   font-size: 12px;
+	//   float: left;
+	// }
+	// </style>
+
+/***/ },
+/* 22 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"footer-icon\">{{ msg }}</div>\n";
+
+/***/ },
+/* 23 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"footer\">\n\t<component-footericon>{{msg}}</component-footericon>\n\t<component-footericon>{{msg}}</component-footericon>\n\t<component-footericon>{{msg}}</component-footericon>\n\t<component-footericon>{{msg}}</component-footericon>\n</div>\n";
 
 /***/ },
 /* 24 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"footer-icon\">{{ msg }}</div>\n";
+	module.exports = "\n<div class=\"app\">\n\t<component-head></component-head>\n\t<component-footer></component-footer>\n</div>\n";
 
 /***/ }
 /******/ ]);

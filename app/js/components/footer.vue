@@ -8,7 +8,35 @@
 </template>
 
 <script>
-var componentFootericon = require('./footIcon.vue');
+import componentFootericon from './footIcon.vue'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports =  {
  data:function(){
