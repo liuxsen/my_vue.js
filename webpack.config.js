@@ -3,7 +3,7 @@ module.exports = {
     entry: "./app/main.js",
     output: {
         path: __dirname,
-        filename: "bundle.js"
+        filename: "./build/bundle.js"
     },
     module: {
         loaders: [{
@@ -13,6 +13,15 @@ module.exports = {
             test: /\.js$/,
             loader: 'babel',
             exclude: /node_modules/
+        }, {
+            test: /\.css$/,
+            loader: "style-loader!css-loader"
+        }, {
+            test: /\.png$/,
+            loader: "url-loader?limit=100000"
+        }, {
+            test: /\.jpg$/,
+            loader: "file-loader"
         }]
     },
     babel: {

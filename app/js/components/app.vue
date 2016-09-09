@@ -1,34 +1,46 @@
 <template>
-  <div class="app">
-  	<component-head></component-head>
-  	<component-footer></component-footer>
-  </div>
+  <component
+   :is='currentView' 
+   keep-alive 
+   transition="fade" 
+   transition-mode='out-in'>
+   </component> 
+  <button @click="change">点击变化模板</button>
 </template>
 
 <script>
-var ComponentHead = require('./head.vue');
-var ComponentFooter = require('./footer.vue');
-module.exports =  {
- data:function(){
- 	return {
-	 		msg: 'hello world!'
-	 	}
-	 },
- components:{
- 		ComponentHead,
- 		ComponentFooter
- 	}
+var myHead = require('./myHead.vue')
+var myFooter = require('./myFooter.vue')
+var myContent = require('./myContent.vue')
+module.exports = {
+  data: function(){
+    return {
+      currentView: 'myHead',
+      items:[
+        {name: 'zhangsan',age: 13,sex: 'man'},
+        {name: 'lisi',age: 15,sex: 'wman'},
+        {name: 'wangwu',age: 16,sex: 'man'},
+      ]
+    }
+  },
+  components:{
+    myHead: myHead,
+    myFooter: myFooter,
+    myContent: myContent
+  },
+  methods:{
+    change:function(){
+      this.currentView =  this.currentView === 'myFooter'? 'myHead':'myFooter';
+    }
+  }
 }
 </script>
 
-<style>
-html,body{
-	height: 100%;
-	margin: 0;
+<style lang="css" scoped>
+.fade-transition{
+  transition: opacity .3s ease;
 }
-.app {
-  background-color: #eee;
-  position: relative;
-  height: 100%;
+.fade-enter,.fade-leave{
+  opacity: 0;
 }
 </style>

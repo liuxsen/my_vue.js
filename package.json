@@ -4,8 +4,7 @@
   "description": "vue_webpack",
   "main": "main.js",
   "scripts": {
-    "dev": "webpack-dev-server --inline --hot",
-    "build": "webpack -p"
+    "dev": "webpack-dev-server --inline --hot"
   },
   "repository": {
     "type": "git",
@@ -37,6 +36,7 @@
     "webpack-dev-server": "^1.15.1"
   },
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "vue": "^1.0.26",
     "webpack": "^1.13.2"
   }
